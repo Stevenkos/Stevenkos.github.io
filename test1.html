@@ -33,7 +33,12 @@
       <small class="field-hint">Określ, do kogo ma trafić wiadomość.</small>
     </div>
 
-    <!-- Imię -->
+    <div class="form-field hidden" id="childAgeField">
+  <label for="childAge">Wiek dziecka *</label>
+  <input type="number" id="childAge" name="childAge" min="1" max="18" placeholder="np. 7" />
+  <small class="field-hint">Podaj wiek dziecka (w latach).</small>
+</div>
+    
     <div class="form-field">
       <label for="name">Imię i nazwisko *</label>
       <input type="text" id="name" name="name" required placeholder="Jan Kowalski" />
@@ -85,6 +90,25 @@
     }
   });
 </script>
+    <script>
+  const recipientSelect = document.getElementById("recipient");
+  const childAgeField = document.getElementById("childAgeField");
+  const childAgeInput = document.getElementById("childAge");
+
+  recipientSelect.addEventListener("change", () => {
+    if (recipientSelect.value === "mail12") {
+      // pokaż pole i ustaw jako wymagane
+      childAgeField.classList.remove("hidden");
+      childAgeInput.required = true;
+    } else {
+      // ukryj pole i usuń wymaganie
+      childAgeField.classList.add("hidden");
+      childAgeInput.required = false;
+      childAgeInput.value = ""; // wyczyść, jeśli coś wpisano
+    }
+  });
+</script>
+
 
   </body>
 </html>
