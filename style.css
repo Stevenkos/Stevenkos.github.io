@@ -66,3 +66,110 @@ footer {
   color: #fff;
   margin-top: 2rem;
 }
+
+/* Formularz – pola i układ */
+form {
+  display: grid;
+  gap: 1rem;
+}
+
+.form-field {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+label {
+  font-weight: bold;
+  color: #222;
+}
+
+input,
+select,
+textarea {
+  padding: 0.6rem 0.8rem;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 1rem;
+  background-color: #fafafa;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+  border-color: #2952ff;
+  box-shadow: 0 0 0 3px rgba(41, 82, 255, 0.2);
+  outline: none;
+  background-color: #fff;
+}
+
+textarea {
+  resize: vertical;
+  min-height: 120px;
+}
+
+/* Podpowiedzi i błędy */
+.field-hint {
+  font-size: 0.85rem;
+  color: #666;
+}
+
+.field-error {
+  font-size: 0.85rem;
+  color: #d43f3f;
+  min-height: 1em;
+}
+
+/* Przyciski */
+.form-actions {
+  display: flex;
+  gap: 1rem;
+  margin-top: 0.5rem;
+}
+
+.btn {
+  padding: 0.6rem 1.2rem;
+  border-radius: 6px;
+  border: none;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background-color 0.2s, transform 0.1s;
+}
+
+.btn-primary {
+  background-color: #2952ff;
+  color: #fff;
+}
+
+.btn-primary:hover {
+  background-color: #2044d6;
+}
+
+.btn-primary:active {
+  transform: translateY(1px);
+}
+
+.btn-ghost {
+  background-color: transparent;
+  border: 1px solid #ccc;
+  color: #333;
+}
+
+.btn-ghost:hover {
+  background-color: #eee;
+}
+
+/* Responsywność */
+@media (min-width: 700px) {
+  form {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .form-field:nth-child(3),
+  .form-field:nth-child(4),
+  .form-actions {
+    grid-column: 1 / -1; /* pełna szerokość */
+  }
+}
+
