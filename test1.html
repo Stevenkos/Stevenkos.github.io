@@ -73,41 +73,35 @@
 
     <footer>
     </footer>
-
-    <script>
+<script>
   const form = document.getElementById("contactForm");
-  const recipientSelect = document.getElementById("recipient");
-
-  recipientSelect.addEventListener("change", () => {
-    if (recipientSelect.value === "mail1") {
-      // tylko mail 1
-      form.action = "https://formsubmit.co/TWOJ_MAIL_1@example.com";
-    } else if (recipientSelect.value === "mail12") {
-      // mail 1 i mail 2 (FormSubmit pozwala na listę oddzieloną przecinkiem)
-      form.action = "https://formsubmit.co/TWOJ_MAIL_1@example.com,TWOJ_MAIL_2@example.com";
-    } else {
-      form.action = "";
-    }
-  });
-</script>
-    <script>
   const recipientSelect = document.getElementById("recipient");
   const childAgeField = document.getElementById("childAgeField");
   const childAgeInput = document.getElementById("childAge");
 
   recipientSelect.addEventListener("change", () => {
-    if (recipientSelect.value === "mail12") {
+    if (recipientSelect.value === "mail1") {
+      // tylko mail 1
+      form.action = "https://formsubmit.co/TWOJ_MAIL_1@example.com";
+      childAgeField.classList.add("hidden");
+      childAgeInput.required = false;
+      childAgeInput.value = "";
+    } else if (recipientSelect.value === "mail12") {
+      // mail 1 i mail 2 – UWAGA: FormSubmit nie obsługuje wielu adresów
+      form.action = "https://formsubmit.co/TWOJ_MAIL_1@example.com";
       // pokaż pole i ustaw jako wymagane
       childAgeField.classList.remove("hidden");
       childAgeInput.required = true;
     } else {
-      // ukryj pole i usuń wymaganie
+      form.action = "";
       childAgeField.classList.add("hidden");
       childAgeInput.required = false;
-      childAgeInput.value = ""; // wyczyść, jeśli coś wpisano
+      childAgeInput.value = "";
     }
   });
 </script>
+
+    
 
 
   </body>
