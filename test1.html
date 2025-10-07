@@ -9,8 +9,6 @@
   <body>
     <center>
     <header>
-      <h1>Szczepan Kochański</h1>
-
     </header>
     </center>
 
@@ -22,13 +20,72 @@
 
       <section class="form-section">
         <h2>Formularz</h2>
-        <!-- Tutaj wstawisz swój formularz -->
+
+  <form id="contactForm" method="POST">
+    <!-- Wybór adresata -->
+    <div class="form-field">
+      <label for="recipient">Wyślij do:</label>
+      <select id="recipient" name="recipient" required>
+        <option value="">— Wybierz —</option>
+        <option value="mail1">Tylko Mail 1</option>
+        <option value="mail12">Mail 1 i Mail 2</option>
+      </select>
+      <small class="field-hint">Określ, do kogo ma trafić wiadomość.</small>
+    </div>
+
+    <!-- Imię -->
+    <div class="form-field">
+      <label for="name">Imię i nazwisko *</label>
+      <input type="text" id="name" name="name" required placeholder="Jan Kowalski" />
+    </div>
+
+    <!-- Email -->
+    <div class="form-field">
+      <label for="email">Twój email *</label>
+      <input type="email" id="email" name="email" required placeholder="jan@przyklad.pl" />
+    </div>
+
+    <!-- Wiadomość -->
+    <div class="form-field">
+      <label for="message">Wiadomość *</label>
+      <textarea id="message" name="message" rows="5" required></textarea>
+    </div>
+
+    <!-- Ukryte pola FormSubmit -->
+    <input type="hidden" name="_subject" value="Nowa wiadomość z formularza" />
+    <input type="hidden" name="_captcha" value="false" />
+    <input type="hidden" name="_next" value="https://twojastrona.pl/dziekujemy.html" />
+
+    <!-- Przyciski -->
+    <div class="form-actions">
+      <button type="submit" class="btn btn-primary">Wyślij</button>
+      <button type="reset" class="btn btn-ghost">Wyczyść</button>
+    </div>
+  </form>
+        
       </section>
     </main>
 
     <footer>
-      <p>&copy; 2025 Moja Strona</p>
     </footer>
+
+    <script>
+  const form = document.getElementById("contactForm");
+  const recipientSelect = document.getElementById("recipient");
+
+  recipientSelect.addEventListener("change", () => {
+    if (recipientSelect.value === "mail1") {
+      // tylko mail 1
+      form.action = "https://formsubmit.co/TWOJ_MAIL_1@example.com";
+    } else if (recipientSelect.value === "mail12") {
+      // mail 1 i mail 2 (FormSubmit pozwala na listę oddzieloną przecinkiem)
+      form.action = "https://formsubmit.co/TWOJ_MAIL_1@example.com,TWOJ_MAIL_2@example.com";
+    } else {
+      form.action = "";
+    }
+  });
+</script>
+
   </body>
 </html>
 
