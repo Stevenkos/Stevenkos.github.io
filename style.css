@@ -87,7 +87,7 @@ label {
 input,
 select,
 textarea {
-  width: 100%;
+  
   padding: 0.6rem 0.8rem;
   border: 1px solid #ccc;
   border-radius: 6px;
@@ -161,6 +161,14 @@ textarea {
   background-color: #eee;
 }
 
+/* Wymuszenie pełnej szerokości dla pola wiadomości */
+.form-field textarea {
+  width: 100%;
+  box-sizing: border-box;
+}
+
+
+
 /* Responsywność */
 @media (min-width: 700px) {
   form {
@@ -171,6 +179,9 @@ textarea {
   .form-field:nth-child(4),
   .form-actions {
     grid-column: 1 / -1; /* pełna szerokość */
+  }
+  .form-field:nth-child(5) {
+    grid-column: 1 / -1; /* rozciągnij na obie kolumny */
   }
 }
 
