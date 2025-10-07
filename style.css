@@ -17,7 +17,7 @@ body {
 header {
   background: #222;
   color: #fff;
-  padding: 1rem;
+  padding: 4rem;
 }
 
 header h1 {
@@ -61,7 +61,7 @@ main {
 /* Stopka */
 footer {
   text-align: center;
-  padding: 1rem;
+  padding: 2rem;
   background: #222;
   color: #fff;
   margin-top: 2rem;
