@@ -14,8 +14,8 @@
 
     <main>
       <section class="content">
-        <h2>Treść główna</h2>
-        <p>Tu możesz dodać opis, grafikę lub inne elementy.</p>
+        <h2>Formularz kontaktowy</h2>
+        <p>Zapraszam do kontaktu, służę pomocą w sprawach osobistych oraz kwestii zapisu syna do harcerstwa.</p>
       </section>
 
       <section class="form-section">
@@ -24,35 +24,35 @@
   <form id="contactForm" method="POST">
     <!-- Wybór adresata -->
     <div class="form-field">
-      <label for="recipient">Wyślij do:</label>
+      <label for="recipient">Kontakt w sprawie:</label>
       <select id="recipient" name="recipient" required>
         <option value="">— Wybierz —</option>
-        <option value="mail1">Tylko Mail 1</option>
-        <option value="mail12">Mail 1 i Mail 2</option>
+        <option value="mail1">Osobistej</option>
+        <option value="mail12">Zapisu do harcerstwa</option>
       </select>
       <small class="field-hint">Określ, do kogo ma trafić wiadomość.</small>
     </div>
 
     <div class="form-field hidden" id="childAgeField">
-  <label for="childAge">Wiek dziecka *</label>
+  <label for="childAge">Wiek dziecka</label>
   <input type="number" id="childAge" name="childAge" min="1" max="18" placeholder="np. 7" />
   <small class="field-hint">Podaj wiek dziecka (w latach).</small>
 </div>
     
     <div class="form-field">
-      <label for="name">Imię i nazwisko *</label>
+      <label for="name">Imię i nazwisko</label>
       <input type="text" id="name" name="name" required placeholder="Jan Kowalski" />
     </div>
 
     <!-- Email -->
     <div class="form-field">
-      <label for="email">Twój email *</label>
+      <label for="email">Twój email</label>
       <input type="email" id="email" name="email" required placeholder="jan@przyklad.pl" />
     </div>
 
     <!-- Wiadomość -->
     <div class="form-field">
-      <label for="message">Wiadomość *</label>
+      <label for="message">Wiadomość</label>
       <textarea id="message" name="message" rows="5" required></textarea>
     </div>
 
@@ -82,13 +82,13 @@
   recipientSelect.addEventListener("change", () => {
     if (recipientSelect.value === "mail1") {
       // tylko mail 1
-      form.action = "https://formsubmit.co/TWOJ_MAIL_1@example.com";
+      form.action = "https://formsubmit.co/szczepan.ko12@gmail.com";
       childAgeField.classList.add("hidden");
       childAgeInput.required = false;
       childAgeInput.value = "";
     } else if (recipientSelect.value === "mail12") {
       // mail 1 i mail 2 – UWAGA: FormSubmit nie obsługuje wielu adresów
-      form.action = "https://formsubmit.co/TWOJ_MAIL_1@example.com";
+      form.action = "https://formsubmit.co/modelka012@gmail.com";
       // pokaż pole i ustaw jako wymagane
       childAgeField.classList.remove("hidden");
       childAgeInput.required = true;
