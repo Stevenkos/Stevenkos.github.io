@@ -173,3 +173,8 @@ textarea {
   }
 }
 
+.hidden {
+  display: none;
+}
+
+
