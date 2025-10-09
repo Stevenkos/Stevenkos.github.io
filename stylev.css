@@ -1,0 +1,75 @@
+/* style.css */
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background: #fdfdfd;
+  color: #333;
+  margin: 0;
+  padding: 0;
+  line-height: 1.6;
+}
+
+header {
+  background: #f2f2f2;
+  padding: 2rem;
+  text-align: center;
+}
+
+.subtitle {
+  font-size: 1.1rem;
+  color: #666;
+}
+
+main {
+  padding: 2rem;
+  max-width: 800px;
+  margin: auto;
+}
+
+.description p {
+  font-size: 1.2rem;
+  margin-bottom: 1.5rem;
+}
+
+.details ul {
+  list-style: none;
+  padding: 0;
+}
+
+.details li {
+  margin-bottom: 0.5rem;
+}
+
+.voucher {
+  margin-top: 2rem;
+  text-align: center;
+}
+
+.code {
+  font-size: 1.5rem;
+  font-weight: bold;
+  background: #eee;
+  padding: 0.5rem 1rem;
+  display: inline-block;
+  border-radius: 5px;
+}
+
+.barcode {
+  margin-top: 1rem;
+  width: 200px;
+  height: auto;
+}
+
+.footer-note {
+  margin-top: 2rem;
+  font-size: 0.9rem;
+  color: #555;
+}
+
+footer {
+  background: #f2f2f2;
+  text-align: center;
+  padding: 1rem;
+  font-size: 0.8rem;
+  color: #777;
+}
+ 
